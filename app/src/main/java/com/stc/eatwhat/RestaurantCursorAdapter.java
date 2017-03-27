@@ -1,4 +1,4 @@
-package com.stcsw.eatwhat;
+package com.stc.eatwhat;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,10 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
-import com.stcsw.eatwhat.EatWhatItemContract.FeedEntry;
-/**
- * Created by daniel.chiou on 2016/9/19.
- */
+import com.stc.eatwhat.EatWhatItemContract.FeedEntry;
+
 public class RestaurantCursorAdapter extends CursorAdapter {
     public RestaurantCursorAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);

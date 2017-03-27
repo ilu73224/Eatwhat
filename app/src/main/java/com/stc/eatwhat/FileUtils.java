@@ -1,14 +1,8 @@
-package com.stcsw.eatwhat;
-
+package com.stc.eatwhat;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-
-/**
- * Created by daniel.chiou on 2017/3/27.
- */
-
 public class FileUtils {
     /**
      * Creates the specified <code>toFile</code> as a byte for byte copy of the

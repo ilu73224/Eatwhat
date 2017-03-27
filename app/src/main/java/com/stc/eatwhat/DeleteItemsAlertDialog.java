@@ -1,11 +1,6 @@
-package com.stcsw.eatwhat;
-
+package com.stc.eatwhat;
 import android.app.AlertDialog;
 import android.content.Context;
-
-/**
- * Created by daniel.chiou on 2016/9/19.
- */
 public class DeleteItemsAlertDialog extends AlertDialog.Builder {
     public long restaurant_ID=0;
     public String restaurant_title="no title";

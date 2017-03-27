@@ -1,4 +1,4 @@
-package com.stcsw.eatwhat;
+package com.stc.eatwhat;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -26,7 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.stcsw.eatwhat.EatWhatItemContract.FeedEntry;
+import com.stc.eatwhat.EatWhatItemContract.FeedEntry;
 
 import java.io.IOException;
 import java.util.Random;

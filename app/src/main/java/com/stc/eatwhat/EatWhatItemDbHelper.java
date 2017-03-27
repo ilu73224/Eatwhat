@@ -1,18 +1,15 @@
-package com.stcsw.eatwhat;
+package com.stc.eatwhat;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.stcsw.eatwhat.EatWhatItemContract.FeedEntry;
+import com.stc.eatwhat.EatWhatItemContract.FeedEntry;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Created by daniel.chiou on 2016/9/19.
- */
 public class EatWhatItemDbHelper extends SQLiteOpenHelper {
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
