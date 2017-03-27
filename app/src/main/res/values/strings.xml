@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Eatwhat</string>
+    <string name="db_import">import db</string>
+    <string name="db_export">export db</string>
+</resources>
