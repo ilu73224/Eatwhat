@@ -51,7 +51,6 @@ public class RestaurantListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String title = getTitlebyIDFromDB(getRandomID());
                 Snackbar.make(view, title , Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
                         .show();
             }
         });
