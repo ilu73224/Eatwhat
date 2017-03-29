@@ -27,17 +27,10 @@
         android:id="@+id/fab_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_gravity="bottom|end"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@android:drawable/ic_menu_view"
         app:backgroundTint="@color/abc_search_url_text" />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_add"
-        app:backgroundTint="@color/abc_search_url_text" />
+
 </android.support.design.widget.CoordinatorLayout>

@@ -2,4 +2,6 @@
     <string name="app_name">Eatwhat</string>
     <string name="db_import">import db</string>
     <string name="db_export">export db</string>
+    <string name="label_restaurant_name">Restaurant name:</string>
+    <string name="title_add_new_restaurant">Add new restaurant</string>
 </resources>

@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.stc.eatwhat.EatWhatItemContract.FeedEntry;
 
@@ -43,34 +44,6 @@ public class RestaurantListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurantlist);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab_add = (FloatingActionButton) findViewById(R.id.fab_add);
-        fab_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(RestaurantListActivity.this);
-                builder.setTitle("new Restaurant");
-                final LinearLayout ll = (LinearLayout)LayoutInflater.from(RestaurantListActivity.this).inflate(R.layout.dialog_new_restaurant, null, false);
-                builder.setView(ll);
-                // Set up the buttons
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //m_Text = input.getText().toString();
-                        EditText etTitle = (EditText)ll.findViewById(R.id.etTitle);
-                        //EditText etSubtitle = (EditText)ll.findViewById(R.id.etSubtitle);
-                        addItemToDB(etTitle.getText().toString(), " ");
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-            }
-        });
 
         FloatingActionButton fab_get = (FloatingActionButton) findViewById(R.id.fab_get);
         fab_get.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +82,36 @@ public class RestaurantListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_add:{
+                AlertDialog.Builder builder = new AlertDialog.Builder(RestaurantListActivity.this);
+                builder.setTitle(R.string.title_add_new_restaurant);
+                final LinearLayout ll = (LinearLayout)LayoutInflater.from(RestaurantListActivity.this).inflate(R.layout.dialog_new_restaurant, null, false);
+                builder.setView(ll);
+                // Set up the buttons
+                builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //m_Text = input.getText().toString();
+                        EditText etTitle = (EditText)ll.findViewById(R.id.etTitle);
+                        //EditText etSubtitle = (EditText)ll.findViewById(R.id.etSubtitle);
+                        String res_name = etTitle.getText().toString();
+                        if(0 < res_name.length()){
+                            Log.d(TAG, "res_name.length() = " + res_name.length() + " res_name = " + res_name);
+                            addItemToDB(etTitle.getText().toString(), " ");
+                        }else{
+                            Toast.makeText(RestaurantListActivity.this, android.R.string.cancel, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+            }
+            return true;
             case R.id.action_import_db:
                 Log.d(TAG, "import db from " + Backup_DB_PATH);
                 if(null == mDbHelper){
@@ -309,7 +312,7 @@ public class RestaurantListActivity extends AppCompatActivity {
             c.close();
             return title;
         }else{
-            return "ERROR";
+            return getResources().getString(android.R.string.unknownName);
         }
     }
 

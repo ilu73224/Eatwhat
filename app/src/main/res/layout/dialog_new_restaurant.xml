@@ -4,44 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:text="@string/label_restaurant_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <EditText
+        android:id="@+id/etTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight=".20"
-            android:text="餐廳名 :"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".80"
-            android:id="@+id/etTitle"
-            android:text="n"
-            android:selectAllOnFocus="true"
-            android:inputType="text"/>
-    </LinearLayout>
-<!--
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight=".20"
-            android:text="subtitle :"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-        <EditText
-            android:layout_width="0dp"
-            android:layout_weight=".80"
-            android:layout_height="match_parent"
-            android:id="@+id/etSubtitle"
-            android:text="default_subtitle"
-            android:selectAllOnFocus="true"
-            android:inputType="text" />
-    </LinearLayout>
-    -->
+        android:layout_height="match_parent"
+        android:inputType="text"
+        android:selectAllOnFocus="true" />
 </LinearLayout>
