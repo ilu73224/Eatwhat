@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">要吃什麼</string>
+    <string name="db_import">匯入餐廳資料庫</string>
+    <string name="db_export">匯出餐廳資料庫</string>
+    <string name="label_restaurant_name">餐廳名稱：</string>
+    <string name="title_add_new_restaurant">新增餐廳</string>
+</resources>
