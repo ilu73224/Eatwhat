@@ -34,6 +34,7 @@ import java.util.Random;
 
 public class RestaurantListActivity extends AppCompatActivity {
     private static String TAG="RestaurantListActivity";
+    public static String PACKAGE_NAME;
     private EatWhatItemDbHelper mDbHelper=null;
     public static final String Backup_DB_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() +"/" + EatWhatItemDbHelper.DATABASE_NAME;
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 0;
@@ -42,6 +43,7 @@ public class RestaurantListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurantlist);
+        PACKAGE_NAME = getApplicationContext().getPackageName();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

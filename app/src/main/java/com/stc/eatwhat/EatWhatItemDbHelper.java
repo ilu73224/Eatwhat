@@ -10,6 +10,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import static com.stc.eatwhat.RestaurantListActivity.PACKAGE_NAME;
+
 public class EatWhatItemDbHelper extends SQLiteOpenHelper {
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
@@ -24,7 +26,7 @@ public class EatWhatItemDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "EatWhatItem.db";
-    public static String DB_FILEPATH = "/data/data/com.stcsw.eatwhat/databases/"+DATABASE_NAME;
+    public static String DB_FILEPATH = "/data/data/"+PACKAGE_NAME+"/databases/"+DATABASE_NAME;
     public EatWhatItemDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
